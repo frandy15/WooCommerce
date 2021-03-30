@@ -1,0 +1,10 @@
+
+.p-wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.p-wrapper {
+    margin: 40px -5px;
+    justify-content: flex-start;
+}
