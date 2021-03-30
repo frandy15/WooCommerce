@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev",
+    "build": "next build"
+
   },
   "dependencies": {
     "apollo-boost": "^0.4.9",
