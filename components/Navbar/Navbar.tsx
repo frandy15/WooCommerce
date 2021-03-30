@@ -1,22 +1,22 @@
 
 const Navbar = () => {
     return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">WooCommerce
-          <span class="sr-only">(current)</span>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div className="collapse navbar-collapse" id="navbarColor01">
+    <ul className="navbar-nav mr-auto">
+      <li className="nav-item active">
+        <a className="nav-link" href="#">WooCommerce
+          <span className="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Categories</a>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Categories</a>
       </li>
       {/* <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
       </li> */}
-      <li class="nav-item">
-        <a class="nav-link" href="#">Account</a>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Account</a>
       </li>
     </ul>
     {/* <form class="form-inline my-2 my-lg-0">
