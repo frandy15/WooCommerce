@@ -42,3 +42,5 @@ return {
 }
 
 export default withRouter(ProductPage);
+
+

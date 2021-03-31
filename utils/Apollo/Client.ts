@@ -13,5 +13,6 @@ const apolloClient = new ApolloClient({
     }),
     cache: new InMemoryCache()
 })
+console.log(`Using uri ${apiConfig.graphqlUrl}`)
 
 export default apolloClient;
