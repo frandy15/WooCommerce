@@ -25,4 +25,23 @@ const PRODUCTS_QUERY = gql`query{
     }
   }`;
 
-export { PRODUCTS_QUERY }
+const PRODUCT_BY_ID = gql` query Product( $id: Int !) {
+  simpleProduct( productId: $id) {
+    id
+    name
+    productId
+    price
+    averageRating
+    slug
+    description
+    image {
+      uri
+      title
+      srcSet
+      sourceUrl
+    }
+
+  }
+}`;
+
+export { PRODUCTS_QUERY, PRODUCT_BY_ID }

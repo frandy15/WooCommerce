@@ -1,4 +1,8 @@
 {
-    "cleanUrls": true
+    "cleanUrls": true,
+    "rewrites": [
+        { "source": "/product/(?<slug>[^/]+)$", "destination": "/product?slug=$slug" }
+       
+      ]
    
 }
