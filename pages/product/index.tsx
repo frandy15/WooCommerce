@@ -14,14 +14,18 @@ const ProductPage = (props: ProductPageProps | any) => {
         <Layout>
             {   product && 
 
-        <div className="card bg-light mb-3 p-5">
-            <div className="card-header">{product.name}</div>
+            <div className="container p-5 mt-5">
+            <div className="card bg-light mb-3 p-5">
+            <div className="card-header"><h3>{product.name}</h3></div>
             <img src={product.image.sourceUrl} className="card-img-top" alt={`${product.name} image`} srcSet={product.image.srcSet}/>
             <div className="card-body">
             <h5 className="card-title">{product.name}</h5>
             <p className="card-text">{product.description}</p>
             </div>
-        </div>
+
+            </div>
+            </div>
+       
     }
         </Layout>
 

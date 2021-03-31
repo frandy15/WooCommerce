@@ -22,6 +22,7 @@ const IndexPage = ({productList}: IndexPageProps) => {
 
 IndexPage.getInitialProps = async () => {
 
+    console.log(`Link ${ApolloClient}`)
 const resultQuery = await ApolloClient.query({query: PRODUCTS_QUERY}) 
     
 return {

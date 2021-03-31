@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import styles from './Navbar.module.css'
 const Navbar = () => {
     return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -7,7 +7,7 @@ const Navbar = () => {
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
         <Link href="/">
-          <a className="nav-link">WooCommerce
+        <a className={`nav-link`}>WooCommerce
         </a>
         </Link>
         
@@ -20,13 +20,11 @@ const Navbar = () => {
       </li> */}
       <li className="nav-item">
         <a className="nav-link" href="#">Account</a>
+
       </li>
     </ul>
-    {/* <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form> */}
-  </div>
+
+      </div>
     </nav>
     )
 } 

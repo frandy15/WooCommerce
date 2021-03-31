@@ -6,7 +6,7 @@ const Layout = (props) => {
         <div>
             <Head>
                 <title>WeeCommerce App</title>
-                <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css"/>
+                <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css"/>
             </Head>
             <Header/>
             {props.children}
