@@ -25,7 +25,7 @@ IndexPage.getInitialProps = async () => {
 const resultQuery = await ApolloClient.query({query: PRODUCTS_QUERY}) 
     
 return {
-    productList: resultQuery?.data?.products?.nodes
+    productList: resultQuery.data.products.nodes
 }
 };
 
