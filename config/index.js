@@ -6,7 +6,7 @@ const wooConfiguration = {
 
 const apiConfig = {
     baseUrl: 'http://localhost:3001',
-    graphqlUrl: 'http://localhost:8080/graphql'
+    graphqlUrl: 'http://157.245.245.57/graphql'
 }
 
 module.exports = { wooConfiguration, apiConfig }

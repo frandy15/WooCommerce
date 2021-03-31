@@ -1,5 +1,4 @@
 import Layout from '../components/Layout';
-import {apiConfig} from '../config';
 import Product from '../components/Product/Product';
 import ApolloClient from '../utils/Apollo/Client'
 import {PRODUCTS_QUERY} from '../utils/Apollo/Query/Product'
@@ -12,7 +11,7 @@ const IndexPage = ({productList}: IndexPageProps) => {
             <div className='p-wrapper'>
             {productList.length && (
                 productList.map(product => 
-                    <Product product={product} />
+                    <Product product={product} key={product.id} />
                 )
             )}
             </div>
