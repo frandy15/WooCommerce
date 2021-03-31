@@ -7,7 +7,7 @@ interface ProductPageProps {
     product: any;
 }
 
-const ProductPage = (props: ProductPage | any) => {
+const ProductPage = (props: ProductPageProps | any) => {
     const {product} = props;
     // alert(JSON.stringify(props.product))
     return (
