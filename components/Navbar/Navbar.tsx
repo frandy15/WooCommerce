@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './Navbar.module.css'
+import CartIcon from '../Cart/Components/CartIcon';
 const Navbar = () => {
     return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -7,6 +8,7 @@ const Navbar = () => {
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
         <Link href="/">
+          
         <a className={`nav-link`}>WooCommerce
         </a>
         </Link>
@@ -21,9 +23,12 @@ const Navbar = () => {
       <li className="nav-item">
         <a className="nav-link" href="#">Account</a>
 
-      </li>
-    </ul>
 
+      </li>
+
+      
+    </ul>
+        <CartIcon/>
       </div>
     </nav>
     )

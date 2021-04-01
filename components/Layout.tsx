@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Header from './Header/Header';
+import { AppProvider } from './Context/AppContext';
 
 const Layout = (props) => {
     return (
+        <AppProvider>
         <div>
             <Head>
                 <title>WeeCommerce App</title>
@@ -11,6 +13,8 @@ const Layout = (props) => {
             <Header/>
             {props.children}
         </div>
+        </AppProvider>
+     
     )
 }
 

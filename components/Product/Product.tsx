@@ -1,5 +1,6 @@
 import styles from './Product.module.css'
 import Link from 'next/link'
+import AddButton from '../Cart/Components/Add';
 interface ProductProps {
     product:any
 }
@@ -22,9 +23,9 @@ const Product = (props: ProductProps) => {
                 {product.salePrice &&<del><h5 className="card-title">{product.regularPrice} </h5></del> 
 }
                 <h5 className="card-title"> {product.salePrice ? product.salePrice : product.regularPrice}</h5>
-
+                <i className="fas fa-cart-arrow-down"></i>
                 
-                <a className="btn btn-outline-primary xs-5">Add to cart</a>
+                <AddButton product={product}/>
             </div>
         </div>
     </div>
