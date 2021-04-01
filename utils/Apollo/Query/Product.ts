@@ -44,6 +44,29 @@ const PRODUCT_BY_ID = gql` query Product( $id: Int !) {
   }
 }`;
 
+const PRODUCT_BY_CATEGORY = gql` query Product( $id: Int!) {
+  products(where: {categoryId: $id}) {
+      nodes {
+        id
+        name
+        productId
+        averageRating
+        slug
+        description
+        image {
+          uri
+          title
+          srcSet
+          sourceUrl
+        }
+          ... on SimpleProduct {
+              regularPrice,
+            salePrice
+            
+          }
+      }
+  }
+}`;
 const PRODUCTS_CATEGORIES = gql` query{
   products(first: 20) {
     nodes {
@@ -73,9 +96,12 @@ productCategories(first: 10) {
       srcSet
     }
     name
+    slug
+    productCategoryId
+
   }
 }
 
 }`;
 
-export { PRODUCTS_QUERY, PRODUCT_BY_ID, PRODUCTS_CATEGORIES }
+export { PRODUCTS_QUERY, PRODUCT_BY_ID, PRODUCTS_CATEGORIES, PRODUCT_BY_CATEGORY }

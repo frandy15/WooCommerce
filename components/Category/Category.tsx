@@ -1,3 +1,4 @@
+import Link from 'next/link';
 
 
 const ProductCategory = (props) => {
@@ -8,9 +9,13 @@ const ProductCategory = (props) => {
             width: '300px',
             margin: '30px',
             height: '400px'}}>
-        <div className="card mb-3 w-100 border-dark">
+        <div className="card mb-3 w-100 border-dark h-60">
         <h3 className="card-header">{category?.name}</h3>
-        <img src={category?.image?.sourceUrl} className="w-100 h-75" />
+            <Link href={`/category?slug=${category?.slug}-${category?.productCategoryId}`} as={`/category/${category?.slug}-${category?.productCategoryId}`} >
+            <a>
+            <img src={category?.image?.sourceUrl} className="w-100" style={{height: '270px'}} />
+            </a>
+            </Link>
       </div>
       </div>
     )
