@@ -1,6 +1,7 @@
 import styles from './Product.module.css'
 import Link from 'next/link'
 import AddButton from '../Cart/Components/Add';
+import React from 'react';
 interface ProductProps {
     product:any
 }
@@ -8,7 +9,7 @@ const Product = (props: ProductProps) => {
     const {product} = props
 
     return (               
-    <div >
+    <React.Fragment>
         <div className={`card mb-10 ${styles.product}`}>
             <h4 className="card-header">{product.name}</h4>
             <Link href={`/product?slug=${product.slug}-${product.productId}`} as={`/product/${product.slug}-${product.productId}`} >
@@ -28,7 +29,7 @@ const Product = (props: ProductProps) => {
                 <AddButton product={product}/>
             </div>
         </div>
-    </div>
+    </React.Fragment>
     )
     
 }

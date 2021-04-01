@@ -1,4 +1,25 @@
 /**
+ * 
+ * @param productsInCart 
+ * @param productId 
+ * returns updated productsInCart.
+ */
+const deleteProduct = (productsInCart, productId) => {
+    const updatedProducts = productsInCart.products.filter((product) => {
+        if (product.productId !== productId) {
+            return product;
+        } else {
+            productsInCart.productsCount -= 1;
+            productsInCart.totalPrice = productsInCart.totalPrice - (product.price * product.quantity);
+            return;
+        }
+    })
+    productsInCart.products = updatedProducts;
+    return productsInCart
+}
+
+
+/**
  *  Create a new product
  * 
  * @param product 
@@ -125,4 +146,4 @@ const getNormalizedPrice = (price) => {
 
 }
 
-export { createProduct, initCart, getNormalizedPrice, updateCart }
+export { createProduct, initCart, getNormalizedPrice, updateCart, deleteProduct }

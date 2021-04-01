@@ -1,19 +1,9 @@
 import Link from 'next/link';
-import { useContext, useEffect, useState } from 'react';
+import { useContext} from 'react';
 import { AppContext } from '../Context/AppContext';
+import { deleteProduct } from '../Cart/utils';
 
-const deleteProduct = (productsInCart, productId) => {
-    const updatedProducts = productsInCart.products.filter((product, index) => {
-        if(product.productId !== productId) {
-            return product;
-        }else {
-            productsInCart.productsCount -= 1;
-            productsInCart.totalPrice -= product.price;
-        }           
-    })
-    productsInCart.products =  updatedProducts;
-    return productsInCart
-}
+
 const Table = (props) => {
     const {items} = props
     const [cart, setCart]: any = useContext(AppContext)
