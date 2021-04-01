@@ -12,7 +12,7 @@ const AppProvider = (props) => {
         if(process.browser) {
          let items = localStorage.getItem('cart');
          items = items && JSON.parse(items);
-         setCart({product: '123'})
+         setCart(items)
         }
     }, [])
 

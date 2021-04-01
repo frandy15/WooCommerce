@@ -38,8 +38,8 @@ const AddButton = (props: AddCartButton) => {
             {shouldShowViewCart &&
             (
                 <Link href="/cart">
-                <a onClick={_handleOnClick} className="btn btn-outline-primary xs-5">View Cart</a>
-                </Link>
+            <a className="btn btn-outline-primary xs-5">View Cart</a>
+            </Link> 
             )
            
 }

@@ -89,6 +89,7 @@ const getUpdatedProducts = (products, product, quantity, newQuantity) => {
         updatedProductItem.totalPrice = parseFloat((updatedProductItem.price * updatedProductItem.quantity).toFixed(2));
         return updatedProducts
     } {
+
         const price = getNormalizedPrice(product.salePrice ? product.salePrice : product.regularPrice)
         const newProduct = createProduct(product, price, quantity)
         products.push(newProduct)
