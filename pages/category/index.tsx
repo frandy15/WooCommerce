@@ -9,7 +9,7 @@ const CategoryPage = (props) => {
         <Layout>
             <div className="container">
             <div className="mt-5">
-        <h2 className="m-5"> Best sellers</h2>
+        <h2 className="m-5">{props.category} Best sellers</h2>
             <hr className="my-4"/>
             {productList.length && (
                 productList.map(product => 
@@ -27,9 +27,11 @@ CategoryPage.getInitialProps = async (context) => {
     const {slug, id} = context.query;
 
     const categoryId = slug ? parseInt(slug.split('-').pop()) : id
+    const category = slug.split('-')[0];
     const productsQueryByCategory = await ApolloClient.query({query: PRODUCT_BY_CATEGORY, variables: {id: categoryId}}) 
     return {
-        productList: productsQueryByCategory.data.products.nodes
+        productList: productsQueryByCategory.data.products.nodes,
+        category
     }
 }
 

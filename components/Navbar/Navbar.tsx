@@ -9,22 +9,22 @@ const Navbar = () => {
       <li className="nav-item active">
         <Link href="/">
           
-        <a className={`nav-link`}>WooCommerce
+        <a className={`nav-link`}>Vixicom WooCommerce
         </a>
         </Link>
         
       </li>
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <a className="nav-link" href="#">Categories</a>
-      </li>
+      </li> */}
       {/* <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
       </li> */}
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <a className="nav-link" href="#">Account</a>
 
 
-      </li>
+      </li> */}
 
       
     </ul>
