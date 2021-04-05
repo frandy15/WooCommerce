@@ -2,13 +2,32 @@ import Link from 'next/link';
 import { useContext} from 'react';
 import { AppContext } from '../Context/AppContext';
 import { deleteProduct } from '../Cart/utils';
+import { CHECKOUT_MUTATION } from '../../utils/Apollo/Query/Product';
+import { useMutation } from '@apollo/client';
+import { useRouter } from 'next/router';
+import { v4 } from 'uuid';
 
 
 const Table = (props) => {
     const {items} = props
     const [cart, setCart]: any = useContext(AppContext)
     const productsInCart = cart;
+    const [addToCart, { data }] = useMutation(CHECKOUT_MUTATION);
+    const router = useRouter()
 
+    const _handleCheckout = async () => {
+        cart.products.map(product => {
+                addToCart({ variables: { 
+                    productId: product.productId,
+                     qty: product.quantity, 
+                     cId: v4() 
+                    } 
+                });
+                return
+        }) 
+        router.push('https://woocommerce.mybeeapp.io/carrito/')
+      
+    }
     const _handleOnDelete = (productId) => {
         const updatedProducts = deleteProduct(productsInCart, productId)
         localStorage.setItem('cart', JSON.stringify(updatedProducts))
@@ -56,9 +75,9 @@ const Table = (props) => {
             <th scope="row">Total</th>
             <td scope="row">${items?.totalPrice}</td>
         </tr>
-        <Link href="checkout">
-        <a type="button" className="btn btn-success mt-4 mb-5">checkout</a>
-        </Link>
+        {/* <Link href="https://woocommerce.mybeeapp.io/finalizar-compra/"> */}
+        <button className="btn btn-success mt-4 mb-5" onClick={_handleCheckout}>checkout</button>
+        {/* </Link> */}
 
   
   </tbody>

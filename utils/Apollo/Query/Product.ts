@@ -67,6 +67,17 @@ const PRODUCT_BY_CATEGORY = gql` query Product( $id: Int!) {
       }
   }
 }`;
+
+
+const CHECKOUT_MUTATION = gql`
+mutation Checkout( $productId: Int!, $qty: Int!, $cId: String!) {
+  addToCart(input: {productId: $productId, quantity: $qty, clientMutationId: $cId }) {
+    cart{
+      total
+    }
+  }
+}
+`;
 const PRODUCTS_CATEGORIES = gql` query{
   products(first: 20) {
     nodes {
@@ -104,4 +115,4 @@ productCategories(first: 10) {
 
 }`;
 
-export { PRODUCTS_QUERY, PRODUCT_BY_ID, PRODUCTS_CATEGORIES, PRODUCT_BY_CATEGORY }
+export { PRODUCTS_QUERY, PRODUCT_BY_ID, PRODUCTS_CATEGORIES, PRODUCT_BY_CATEGORY, CHECKOUT_MUTATION }

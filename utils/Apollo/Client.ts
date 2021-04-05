@@ -1,8 +1,10 @@
 import fetch from 'node-fetch'
-import { ApolloClient } from 'apollo-boost'
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { createHttpLink } from 'apollo-link-http'
 import { apiConfig } from '../../config'
+import {
+    ApolloClient,
+    InMemoryCache,
+    createHttpLink,
+} from '@apollo/client'
 
 
 const apolloClient = new ApolloClient({

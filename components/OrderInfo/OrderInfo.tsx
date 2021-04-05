@@ -38,15 +38,7 @@ const OrderInfo = (props) => {
             <th scope="row">Total</th>
             <td scope="row">${cart?.totalPrice}</td>
         </tr>
-        <div className="form-check mt-5">
-        <label className="form-check-label">
-          <input className="form-check-input" type="checkbox" value=""/>
-          <p>Pay with Paypal</p>
-        </label>
-      </div>
-      <Link href="checkout">
-        <a type="button" className="btn btn-outline-primary mt-4 mb-5">Place Order</a>
-        </Link>
+        
   </tbody>
 </table>
             </Fragment>
